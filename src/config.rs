@@ -5,13 +5,13 @@ use std::path::Path;
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
-    api: ApiConfig,
+    pub api: ApiConfig,
 }
 
 #[derive(Debug, Deserialize)]
 pub struct ApiConfig {
-    url: String,
-    api_key: String,
+    pub url: String,
+    pub api_key: String,
 }
 
 pub fn read_config<P: AsRef<Path>>(path: P) -> Result<Config, Box<dyn std::error::Error>> {
