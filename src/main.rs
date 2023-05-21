@@ -22,6 +22,7 @@ async fn get_agent(url: String, api_key: String) -> Result<GetAgentResponse, req
         .header("Authorization", format!("Bearer {}", api_key))
         .send()
         .await?
+        .error_for_status()?
         .json::<model::GetAgentResponse>()
         .await?;
     Ok(response)
