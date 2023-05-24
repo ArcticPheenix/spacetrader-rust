@@ -1,4 +1,5 @@
 use serde::Deserialize;
+
 #[derive(Debug, Deserialize)]
 pub struct GetAgentResponse {
     pub data: AgentData,
@@ -11,4 +12,15 @@ pub struct AgentData {
     pub symbol: String,
     pub headquarters: String,
     pub credits: i64,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PostRegister {
+    pub data: PubRegisterData,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PubRegisterData {
+    pub symbol: String,
+    pub faction: String,
 }
